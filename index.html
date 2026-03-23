@@ -1,21 +1,36 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>食谱列表应用</title>
+    <title>Task Manager</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>食谱列表</h1>
-        <div class="add-recipe">
-            <input type="text" id="recipe-name" placeholder="食谱名称" required>
-            <input type="text" id="recipe-description" placeholder="食谱描述" required>
-            <button id="add-btn">添加食谱</button>
-        </div>
-        <ul id="recipe-list"></ul>
-    </div>
+    <main class="container">
+        <header>
+            <h1>Task Manager</h1>
+        </header>
+        <section class="task-form">
+            <form id="add-task-form">
+                <label for="task-input" class="sr-only">Enter a new task</label>
+                <input type="text" id="task-input" placeholder="Enter a new task" required aria-describedby="task-help">
+                <small id="task-help" class="help-text">Press Enter or click Add Task to create a new task.</small>
+                <button type="submit" id="add-btn">Add Task</button>
+            </form>
+        </section>
+        <section class="task-list">
+            <h2>Tasks</h2>
+            <div class="filter-buttons">
+                <button id="filter-all" class="filter-btn active">All</button>
+                <button id="filter-completed" class="filter-btn">Completed</button>
+                <button id="filter-pending" class="filter-btn">Pending</button>
+            </div>
+            <ul id="task-list" aria-label="List of tasks">
+                <!-- Tasks will be added here -->
+            </ul>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
