@@ -1,36 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
+    <title>北京大学身份认证服务</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main class="container">
-        <header>
-            <h1>Task Manager</h1>
-        </header>
-        <section class="task-form">
-            <form id="add-task-form">
-                <label for="task-input" class="sr-only">Enter a new task</label>
-                <input type="text" id="task-input" placeholder="Enter a new task" required aria-describedby="task-help">
-                <small id="task-help" class="help-text">Press Enter or click Add Task to create a new task.</small>
-                <button type="submit" id="add-btn">Add Task</button>
-            </form>
-        </section>
-        <section class="task-list">
-            <h2>Tasks</h2>
-            <div class="filter-buttons">
-                <button id="filter-all" class="filter-btn active">All</button>
-                <button id="filter-completed" class="filter-btn">Completed</button>
-                <button id="filter-pending" class="filter-btn">Pending</button>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <img src="https://www.pku.edu.cn/images/logo.png" alt="北京大学校徽" class="logo">
+                <h1>统一身份认证</h1>
             </div>
-            <ul id="task-list" aria-label="List of tasks">
-                <!-- Tasks will be added here -->
-            </ul>
-        </section>
-    </main>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">账号</label>
+                    <input type="text" id="username" placeholder="学号 / 北京大学标识码" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" placeholder="请输入密码" required>
+                </div>
+                <div class="options">
+                    <label class="remember-me">
+                        <input type="checkbox"> 保持登录
+                    </label>
+                    <a href="#" class="forgot-password">忘记密码？</a>
+                </div>
+                <button type="submit" class="login-btn">登 录</button>
+            </form>
+            <div class="login-footer">
+                <p>版权所有 © 北京大学</p>
+                <div class="footer-links">
+                    <a href="#">帮助</a>
+                    <span>|</span>
+                    <a href="#">常见问题</a>
+                    <span>|</span>
+                    <a href="#">隐私政策</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="background-overlay"></div>
     <script src="script.js"></script>
 </body>
 </html>
